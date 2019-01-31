@@ -80,12 +80,26 @@ var todoList = {
 
 var handlers = { //object to handle onclick events
   //new method for displatTodos
-  displayTodos: function() {
+  displayTodos: function(){
     todoList.displayTodos();
   },
-  toggleAll: function() {
+  toggleAll: function(){
     todoList.toggleAll();
   },
+  addTodo: function(){
+    var addTodoTextInput = document.getElementById('addTodoTextInput');
+    todoList.addTodo(addTodoTextInput.value); //get value of whatever was typed in the input
+    addTodoTextInput.value = ''; //clear the box after adding item
+  },
+  // changeTodo: function(){
+  //   todoList.changeTodo();
+  // },
+  // deleteTodo: function(){
+  //   todoList.deleteTodo();
+  // },
+  // toggleCompleted: function() {
+  //   todoList.toggleCompleted();
+  // }
 };
 
 
