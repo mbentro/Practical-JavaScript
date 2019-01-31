@@ -91,9 +91,13 @@ var handlers = { //object to handle onclick events
     todoList.addTodo(addTodoTextInput.value); //get value of whatever was typed in the input
     addTodoTextInput.value = ''; //clear the box after adding item
   },
-  // changeTodo: function(){
-  //   todoList.changeTodo();
-  // },
+  changeTodo: function(){
+    var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
+    var changeTodoTextInput = document.getElementById('changeTodoTextInput');
+    todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+    changeTodoPositionInput.value = '';
+    changeTodoTextInput.value = '';
+  },
   // deleteTodo: function(){
   //   todoList.deleteTodo();
   // },
