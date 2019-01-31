@@ -1,6 +1,7 @@
 var todoList = {
   todos: [],
   displayTodos: function() {
+    // debugger; <!--To start debugger-->
     if (this.todos.length === 0) {
       console.log("Todos list is empty");
     } else {
@@ -64,19 +65,28 @@ var todoList = {
 
 };
 
-//1. we want to get access to display Todos button
-var displayTodosButton = document.getElementById('displayTodosButton');
+// //1. we want to get access to display Todos button
+// var displayTodosButton = document.getElementById('displayTodosButton');
+// var toggleAllButton = document.getElementById('toggleAllButton');
 
-//2. we want to run displayTodos method, when someone clicks the display todos button
-displayTodosButton.addEventListener('click', function(){
-  todoList.displayTodos();
-});
+// //2. we want to run displayTodos method, when someone clicks the display todos button
+// displayTodosButton.addEventListener('click', function() {
+//   todoList.displayTodos();
+// });
 
-var toggleAllButton = document.getElementById('toggleAllButton');
+// toggleAllButton.addEventListener('click', function() {
+//   todoList.toggleAll();
+// }); //refactoring
 
-toggleAllButton.addEventListener('click', function() {
-  todoList.toggleAll();
-});
+var handlers = { //object to handle onclick events
+  //new method for displatTodos
+  displayTodos: function() {
+    todoList.displayTodos();
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+  },
+};
 
 
 
