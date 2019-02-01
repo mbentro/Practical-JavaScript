@@ -98,9 +98,11 @@ var handlers = { //object to handle onclick events
     changeTodoPositionInput.value = '';
     changeTodoTextInput.value = '';
   },
-  // deleteTodo: function(){
-  //   todoList.deleteTodo();
-  // },
+  deleteTodo: function(){
+    var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
+    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+    deleteTodoPositionInput.value = '';
+  },
   // toggleCompleted: function() {
   //   todoList.toggleCompleted();
   // }
